@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: anurtiag <anurtiag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 04:22:22 by kali              #+#    #+#             */
-/*   Updated: 2024/07/26 04:48:26 by kali             ###   ########.fr       */
+/*   Updated: 2024/08/04 16:25:14 by anurtiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <string>
+# include <cctype>
+# include <sstream>
+# include <climits>
 
 class ScalarConverter
 {
@@ -25,7 +28,7 @@ class ScalarConverter
         ~ScalarConverter();
         ScalarConverter(const ScalarConverter& source);
         ScalarConverter& operator=(const ScalarConverter& source);
-        static void convert(std::string& s);
+        static void convert(const std::string& literal);
 };
 
 #endif
