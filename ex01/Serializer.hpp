@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anurtiag <anurtiag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/26 04:22:22 by kali              #+#    #+#             */
-/*   Updated: 2024/08/18 13:00:50 by anurtiag         ###   ########.fr       */
+/*   Created: 2024/08/19 14:29:28 by anurtiag          #+#    #+#             */
+/*   Updated: 2024/08/19 16:14:45 by anurtiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-# include <iostream>
 # include <string>
-# include <cctype>
+# include <iostream>
 # include <sstream>
-# include <limits>
-# include <cstdlib>
-# include <cmath>
-# include <iomanip>
+# include <stdint.h>
 
-enum
-{
-    TOCHAR,
-    TOINT,
-    TODOUBLE,
-    TOFLOAT
-};
+# include "Data.hpp"
 
-class ScalarConverter
+class Serializer
 {
     private:
-        ScalarConverter();
-        ~ScalarConverter();
-        ScalarConverter(const ScalarConverter& source);
-        ScalarConverter& operator=(const ScalarConverter& source);
+        Serializer();
+        Serializer(const Serializer& source);
+        Serializer& operator=(const Serializer& source);
+        ~Serializer();
     public:
-        static void convert(std::string& literal);
+        static uintptr_t serialize(Data* ptr);
+        static Data* deserialize(uintptr_t raw);  
 };
+
+
+
 
 #endif
